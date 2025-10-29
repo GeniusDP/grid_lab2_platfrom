@@ -1,0 +1,19 @@
+services:
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - nodejs
+      - react
+    restart: always
+
+  nodejs:
+    image: nelepindmitriy/grid-lab-image
+    restart: always
+
+  react:
+    image: zaranik/grid_lab1_frontend:lab2
+    restart: always
