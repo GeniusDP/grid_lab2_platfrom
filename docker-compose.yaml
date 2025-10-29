@@ -12,6 +12,8 @@ services:
 
   nodejs:
     image: nelepindmitriy/grid-lab-image
+    ports:
+      - "8080:8080"
     restart: always
 
   react:
